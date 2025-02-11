@@ -1,0 +1,557 @@
+/* Definições Globais */
+:root {
+    --cor-fundo: #121212;
+    --cor-texto: #ffffff;
+    --cor-destaque: #ffcc00;
+    --cor-secundaria: #333333;
+}
+
+/* 
+body *:not(body::before) {
+    z-index: 1 !important;
+} */
+
+body {
+    background: url('./img/bg.png');
+    color: var(--cor-texto);
+    /* font-family: Arial, sans-serif; */
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+/* body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+} */
+
+/* Header */
+header {
+    background-color: transparent;
+    padding: 15px 30px;
+    content: "";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.6); */
+    z-index: 1;
+}
+
+.logo {
+    height: 60px;
+}
+
+/* Botões do Header */
+.btn-custom-outline {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 8px 10px;
+    border: 2px solid var(--cor-destaque);
+    border-radius: 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-custom-outline:hover {
+    background-color: var(--cor-destaque);
+    color: black;
+    border-color: black;
+}
+
+.btn-custom {
+    background-color: var(--cor-destaque);
+    color: black;
+    font-weight: bold;
+    padding: 8px 10px;
+    border-radius: 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: rgb(20, 235, 70);
+    color: #000;
+}
+
+
+/* ===================  Hero Section =========================*/
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* background: url('background.jpg') no-repeat center center/cover; */
+}
+
+.hero>.container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+
+
+/* Estilização dos números */
+.hero .stat-number {
+    font-size: 3rem;
+    /* Ajustando tamanho da fonte */
+    font-weight: bold;
+    color: var(--cor-destaque);
+    margin-bottom: 0;
+}
+
+/* Texto complementar abaixo dos números */
+.hero .stat-label {
+    font-size: 10px;
+    font-weight: normal;
+    color: var(--cor-texto);
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/* Ajuste de espaçamento */
+.hero .stats>div {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    margin: auto;
+    flex-wrap: nowrap;
+}
+
+.hero .stats .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+/* Estilizando a imagem com recorte orgânico */
+.hero .hero-image {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 450px;
+    /* Aumentamos o tamanho */
+    height: auto;
+    clip-path: path("M168.562 42.5672C184.281 55.141 200 76.1523 200 99.8108C200 123.635 184.127 150.271 157.312 171.283C130.497 192.294 92.8952 207.68 62.9983 195.934C33.1014 184.187 11.064 145.473 3.2045 104.278C-4.655 63.2477 1.81753 19.9014 24.009 5.83869C46.2005 -8.38948 84.111 6.66591 110.772 16.2617C137.432 25.8574 152.997 29.9935 168.562 42.5672Z");
+}
+
+/* Ajuste da imagem dentro do contêiner */
+.hero .hero-image img {
+    width: 110%;
+    /* Aumentamos o tamanho da imagem */
+    height: auto;
+    display: block;
+    transform: translateX(-5%);
+    /* Ajuste fino para centralizar melhor */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero .hero-image {
+        width: 300px;
+        /* Reduz a imagem em telas menores */
+    }
+
+    .hero .hero-image img {
+        width: 120%;
+        transform: translateX(-10%);
+    }
+}
+
+
+
+
+/* Botão personalizado */
+.hero .btn-custom {
+    background-color: var(--cor-destaque);
+    color: black;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.hero .btn-custom:hover {
+    background-color: rgb(20, 235, 70);
+    color: #000;
+}
+
+/* ===================== Vantagens & Inovações =================*/
+/* Estilizando a seção de vantagens */
+.vantagens {
+    background-color: #212121;
+    padding: 80px 0;
+}
+
+/* Título principal */
+.titulo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Ícones dentro dos círculos amarelos */
+.icone-vantagem {
+    font-size: 3rem;
+    color: var(--cor-destaque);
+    background: #212121;
+    /* Fundo amarelo leve */
+    padding: 20px;
+    border-radius: 50%;
+}
+
+/* Título das vantagens */
+.titulo-vantagem {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Ajuste dos itens */
+.vantagem-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.img-vantagens img {
+    width: 10rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 2rem;
+    }
+
+    .icone-vantagem {
+        font-size: 2.5rem;
+        padding: 15px;
+    }
+
+    .titulo-vantagem {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ============================== Passos para Começar =============*/
+/* Estilizando a seção de passos */
+.passos {
+    /* background-color: var(--cor-fundo); */
+    padding: 80px 0;
+    z-index: 1;
+    position: relative;
+}
+
+.passos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+/* Título principal */
+.passos .titulo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-style: italic;
+    z-index: 1 !important;
+    position: relative;
+}
+
+/* Ícones circulares amarelos */
+.passos .icone-passo {
+    font-size: 3rem;
+    color: var(--cor-destaque);
+    background: rgba(255, 204, 0, 0.1);
+    padding: 20px;
+    border-radius: 50%;
+}
+
+/* Título de cada passo */
+.passos .titulo-passo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Ajuste dos itens */
+.passos .passo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Botão de registro */
+.passos .btn-custom {
+    background-color: var(--cor-destaque);
+    color: black;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    transition: 0.3s;
+}
+
+.passos .btn-custom:hover {
+    background-color: rgb(20, 235, 70);
+    color: #000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .passos .titulo {
+        font-size: 2rem;
+    }
+
+    .passos .icone-passo {
+        font-size: 2.5rem;
+        padding: 15px;
+    }
+
+    .passos .titulo-passo {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ============== Perguntas Frequentes ========================== */
+/* Estilizando a seção de FAQ */
+.faq {
+    background-color: var(--cor-secundaria);
+    padding: 80px 0;
+}
+
+/* Título principal */
+.faq .titulo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Perguntas em destaque */
+.faq .faq-question {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Respostas */
+.faq p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .faq .titulo {
+        font-size: 2rem;
+    }
+
+    .faq .faq-question {
+        font-size: 1.1rem;
+    }
+
+    .faq .faq p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ================ Formulário de Contato ==================== */
+/* Estilizando a seção de contato */
+.contato {
+    /* background-color: var(--cor-fundo); */
+    position: relative;
+    padding: 80px 0;
+}
+
+.contato::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.contato>.container {
+    z-index: 1;
+    position: relative;
+}
+
+
+.row-title {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media screen and (max-width:500px) {
+    .row-title {
+        display: grid;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
+
+/* Título principal */
+.contato .titulo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Ícones das redes sociais */
+.contato .redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contato .social-link {
+    font-size: 1.8rem;
+    color: var(--cor-destaque);
+    transition: 0.3s;
+}
+
+.contato .social-link:hover {
+    color: #000;
+    background-color: rgb(20, 235, 70);
+}
+
+/* Formulário */
+.contato .formulario-contato {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.contato .formulario-contato .form-control {
+    background: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Caixa de mensagem maior */
+.contato .formulario-contato textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Botão Enviar */
+.contato .btn-custom {
+    background-color: var(--cor-destaque);
+    color: black;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    transition: 0.3s;
+}
+
+.contato .btn-custom:hover {
+    background-color: rgb(20, 235, 70);
+    color: #000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contato .titulo {
+        font-size: 2rem;
+    }
+
+    .contato .social-link {
+        font-size: 1.5rem;
+    }
+
+    .contato .formulario-contato {
+        max-width: 100%;
+    }
+
+    .contato .formulario-contato .form-control {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* ========== geral ================ */
+
+.text-warning {
+    color: #ffd500 !important;
+}
+
+.btn-warning {
+    background-color: #ffd500 !important;
+}
