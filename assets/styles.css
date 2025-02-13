@@ -41,7 +41,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: rgba(0, 0, 0, 0.6); */
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
@@ -554,4 +554,101 @@ header {
 
 .btn-warning {
     background-color: #ffd500 !important;
+}
+
+
+
+/* ========================== */
+/*            FOOTER          */
+/* ========================== */
+.footer {
+    /* background-color: #000; */
+    color: var(--cor-texto);
+    padding: 40px 0 20px;
+    text-align: center;
+    position: relative;
+}
+
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.footer>.container {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+/* Estilizando os blocos de links */
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Seções do rodapé */
+.footer-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    color: var(--cor-destaque);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: var(--cor-destaque);
+}
+
+/* Texto de Copyright */
+.footer-copy {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* ========================== */
+/*        RESPONSIVIDADE      */
+/* ========================== */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
 }
